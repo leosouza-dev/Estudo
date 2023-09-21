@@ -1,8 +1,9 @@
+import Button from "./components/Button";
 
 function App() {
   return (
     <div className="App">
-      Teste de tela
+      <Button />
     </div>
   );
 }
