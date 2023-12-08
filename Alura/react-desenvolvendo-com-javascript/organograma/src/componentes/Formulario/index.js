@@ -15,6 +15,11 @@ const Formulario = (props) => {
         event.preventDefault();
         console.log('Foi submetido', nome, cargo, imagem, time);
         props.aoColaboradorCadastrado({nome, cargo, imagem, time})
+        // limpando form
+        setNome('');
+        setCargo('');
+        setImagem('');
+        setTime('');
     }
 
     return (

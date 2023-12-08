@@ -49,19 +49,19 @@ function App() {
     setColaboradores([...colaboradores, colaborador])
   }
 
-  console.log(colaboradores);
-
   return (
     <div className="App">
       <Banner />
       <Formulario times={times.map(time => time.nome)} aoColaboradorCadastrado={colaborador => aoNovoColaboradorAdicionado(colaborador)}/>
       {
         times.map(time => 
-          <Time 
+          // para resolver a questão abaixo o professor resolveu direto no componente de time, verificando se tem colaborador;
+          colaboradores.some(colaborador => colaborador.time === time.nome) && <Time 
             key={time.nome}
             nome={time.nome}
             corPrimaria={time.corPrimaria}
             corSecundaria={time.corSecundaria}
+            colaboradores={colaboradores.filter(colaborador => colaborador.time === time.nome) }
           />
         )
       }
